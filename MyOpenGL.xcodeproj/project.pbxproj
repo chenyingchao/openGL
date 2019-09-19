@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24B4525622F9563900CC68AF /* timg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 24B4525522F9563900CC68AF /* timg.jpeg */; };
 		24DF0CAC22F811EF003DF124 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DF0CAB22F811EF003DF124 /* AppDelegate.m */; };
 		24DF0CAF22F811EF003DF124 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DF0CAE22F811EF003DF124 /* ViewController.m */; };
 		24DF0CB222F811EF003DF124 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24DF0CB022F811EF003DF124 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		24DF0CCF22F811F1003DF124 /* MyOpenGLUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DF0CCE22F811F1003DF124 /* MyOpenGLUITests.m */; };
 		24DF0CDE22F816F8003DF124 /* glsl.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 24DF0CDC22F816F7003DF124 /* glsl.vsh */; };
 		24DF0CDF22F816F8003DF124 /* glsl.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 24DF0CDD22F816F7003DF124 /* glsl.fsh */; };
-		24DF0CE122F81736003DF124 /* test123.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DF0CE022F81735003DF124 /* test123.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24B4525522F9563900CC68AF /* timg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = timg.jpeg; sourceTree = "<group>"; };
 		24DF0CA722F811EF003DF124 /* MyOpenGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOpenGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24DF0CAA22F811EF003DF124 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24DF0CAB22F811EF003DF124 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		24DF0CD022F811F1003DF124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24DF0CDC22F816F7003DF124 /* glsl.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = glsl.vsh; sourceTree = "<group>"; };
 		24DF0CDD22F816F7003DF124 /* glsl.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = glsl.fsh; sourceTree = "<group>"; };
-		24DF0CE022F81735003DF124 /* test123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test123.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 		24DF0CA922F811EF003DF124 /* MyOpenGL */ = {
 			isa = PBXGroup;
 			children = (
-				24DF0CE022F81735003DF124 /* test123.png */,
+				24B4525522F9563900CC68AF /* timg.jpeg */,
 				24DF0CDD22F816F7003DF124 /* glsl.fsh */,
 				24DF0CDC22F816F7003DF124 /* glsl.vsh */,
 				24DF0CAA22F811EF003DF124 /* AppDelegate.h */,
@@ -245,10 +245,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				24DF0CB722F811F1003DF124 /* LaunchScreen.storyboard in Resources */,
+				24B4525622F9563900CC68AF /* timg.jpeg in Resources */,
 				24DF0CDE22F816F8003DF124 /* glsl.vsh in Resources */,
 				24DF0CB422F811F1003DF124 /* Assets.xcassets in Resources */,
 				24DF0CDF22F816F8003DF124 /* glsl.fsh in Resources */,
-				24DF0CE122F81736003DF124 /* test123.png in Resources */,
 				24DF0CB222F811EF003DF124 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

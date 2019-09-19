@@ -46,7 +46,7 @@ typedef struct {
     [EAGLContext setCurrentContext:self.context];
     
     self.layer = [[CAEAGLLayer alloc] init];
-    self.layer.frame = self.view.bounds;
+    self.layer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 300);
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     [self.view.layer addSublayer:self.layer];
     
@@ -68,8 +68,6 @@ typedef struct {
     glBindRenderbuffer(GL_RENDERBUFFER, renderBuffer);
     [self.context renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.layer];
     
-    
-    
     glGenFramebuffers(1, &frameBuffer);
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER,
@@ -80,7 +78,7 @@ typedef struct {
 
 - (void)genTexture {
     
-    UIImage *image = [UIImage imageNamed:@"test123"];
+    UIImage *image = [UIImage imageNamed:@"timg.jpeg"];
     GLuint textureID = [self createTextureWithImage:image];
     
     glViewport(0, 0, self.drawableWidth, self.drawableHeight);
