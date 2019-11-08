@@ -46,17 +46,17 @@ typedef struct {
     [EAGLContext setCurrentContext:self.context];
     
     self.layer = [[CAEAGLLayer alloc] init];
-    self.layer.frame = CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 300);
+    self.layer.frame = CGRectMake(0, 10, [UIScreen mainScreen].bounds.size.width, 400);
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     [self.view.layer addSublayer:self.layer];
     
     // 创建顶点数组
     self.vertices = malloc(sizeof(SenceVertex) * 4); // 4 个顶点
     
-    self.vertices[0] = (SenceVertex){{-1, 1, 0}, {0, 1}}; // 左上角
-    self.vertices[1] = (SenceVertex){{-1, -1, 0}, {0, 0}}; // 左下角
-    self.vertices[2] = (SenceVertex){{1, 1, 0}, {1, 1}}; // 右上角
-    self.vertices[3] = (SenceVertex){{1, -1, 0}, {1, 0}}; // 右下角
+    self.vertices[0] = (SenceVertex){{-0.5, 0.5, 0}, {0, 1}}; // 左上角
+    self.vertices[1] = (SenceVertex){{-0.5, -0.5, 0}, {0, 0}}; // 左下角
+    self.vertices[2] = (SenceVertex){{0.5, 0.5, 0}, {1, 1}}; // 右上角
+    self.vertices[3] = (SenceVertex){{0.5, -0.5, 0}, {1, 0}}; // 右下角
 }
 
 - (void)genBuffers {
@@ -64,16 +64,25 @@ typedef struct {
     GLuint renderBuffer;
     GLuint frameBuffer;
     
+    //申请标识符
     glGenRenderbuffers(1, &renderBuffer);
+    //第一次绑定会分配该对象的存储空间、初始化；之后再调用 就是指定该对象为当前的激活状态
     glBindRenderbuffer(GL_RENDERBUFFER, renderBuffer);
+    //为当前的颜色渲染缓存 分配图像数据空间
     [self.context renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.layer];
     
+    //帧缓存
     glGenFramebuffers(1, &frameBuffer);
+    //激活帧缓存
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
+    
+    //将颜色缓存装配到帧缓存的颜色点上
     glFramebufferRenderbuffer(GL_FRAMEBUFFER,
                               GL_COLOR_ATTACHMENT0,
                               GL_RENDERBUFFER,
                               renderBuffer);
+    
+    glIsFramebuffer(frameBuffer); //检测帧缓存是否生成
 }
 
 - (void)genTexture {
